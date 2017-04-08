@@ -19,16 +19,34 @@ def OpenAndParse():
 
         names = []
 
-        names = file_contents[beginning_index: ending_index]
+        names = file_contents[beginning_index: ending_index - 1]
 
         names = names.split(';')
 
         print(range(len(names)))
 
-        i = 0
+        ##########################################
 
-        while i < len(names):
-            fullname.append(names[i] + names[i + 1] + names[i + 2])
+        formatted_names = []
+
+        for names_i in names:
+            if names.index(names_i) != 0:
+                if not names.index(names_i) % 3:
+                    # print(names_i[1:])
+                    formatted_names.append(names_i[1:])
+                else:
+                    # print(names_i)
+                    formatted_names.append(names_i)
+            else:
+                # print(names_i)
+                formatted_names.append(names_i)
+
+
+        ##########################################
+
+        i = 0
+        while i < len(formatted_names):
+            fullname.append(formatted_names[i] + formatted_names[i + 1] + formatted_names[i + 2])
             i += 3
 
             #print(*fullname, sep='\n')
