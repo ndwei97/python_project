@@ -18,53 +18,53 @@ Application numbers:
 14/921755
 
 Inventors and how many applications per inventor: 
+Wellington Carl Knox (Pittsburgh, PA)  1
+Bruns Aaron J. (Bettendorf, IA)  1
+Sierra Victor S. (Waukee, IA)  1
 Phelan James J. (Bettendorf, IA)  1
 Hageman John M. (Silvis, IL)  1
-Pileggi Lawrence Thomas (Pittsburgh, PA)  1
-Chiam Keng-Hwee (Singapore, SG) 1
-Ozdoganlar Burak (Sewickley, PA)  1
-Zubiate Brett (Duxbury, MA)  1
-Smailagic Asim (Pittsburgh, PA)  1
-Bromberg David M. (Pittsburgh, PA)  1
-Weldon Jeffrey Arthur (Pittsburgh, PA) 1
-RAPIREDDY Srinivas (Pittsburgh, PA)  1
-Campoy Joan (Pittsburgh, PA)  1
-SAHU Bichismita (Pittsburgh, PA) 1
-Boesch Hanke (Tiefenthal, GE)  1
-Vallespi-gonzalez Carlos (Pittsburgh, PA) 1
-LY Danith H. (Pittsburgh, PA)  1
-Wolf Alon (Haifa, IL)  1
-Herman Herman (Gibsonia, PA)  2
-Pileggi Lawrence (Pittsburgh, PA)  1
-Wellington Carl Knox (Pittsburgh, PA)  1
-Zeng Yukai (Singapore, SG)  1
-Sumbul Huseyin E. (Pittsburgh, PA) 1
-Warren Kristin M. (Pittsburgh, PA)  1
-Erdos Geza (Wexford, PA)  1
-Pezzementi Zachary Abraham (Pittsburgh, PA)  1
-Feinberg Adam (Pittsburgh, PA)  1
-Choset Howard M. (Pittsburgh, PA)  1
-Leduc Philip R. (Pittsburgh, PA)  1
-Hinton Thomas (Pittsburgh, PA) 1
-LeDuc Philip R. (Pittsburgh, PA)  1
-Zametzer Johannes Josef (Zweibruecken, DE) 1
 Dima Cristian (Sankt Ingbert, GE)  1
-Sharma Abhishek Anil (Pittsburgh, PA)  1
-Gilgunn Peter J. (Pittsburgh, PA) 1
+Boesch Hanke (Tiefenthal, GE)  1
+Herman Herman (Gibsonia, PA)  2
+Pezzementi Zachary Abraham (Pittsburgh, PA)  1
 Male Carson Robert (Pittsburgh, PA)  1
-Sierra Victor S. (Waukee, IA)  1
+Campoy Joan (Pittsburgh, PA)  1
+Vallespi-gonzalez Carlos (Pittsburgh, PA) 1
 Bonefas Zachary T. (Grimes, IA)  1
-Bruns Aaron J. (Bettendorf, IA)  1
-Zenati Marco A. (Pittsburgh, PA) 1
-Bhargava Mudit (Pittsburgh, PA) 1
-Mai Kenneth Wei-An (Pittsburgh, PA)  1
-Mpagazehe Jeremiah N. (Pittsburgh, PA) 1
 Vallespi-Gonzalez Carlos (Pittsburgh, PA)  1
-Fedder Gary K. (Turtle Creek, PA)  1
+Zametzer Johannes Josef (Zweibruecken, DE) 1
+Mai Kenneth Wei-An (Pittsburgh, PA)  1
+Bhargava Mudit (Pittsburgh, PA) 1
+Choset Howard M. (Pittsburgh, PA)  1
+Wolf Alon (Haifa, IL)  1
+Zenati Marco A. (Pittsburgh, PA) 1
+Feinberg Adam (Pittsburgh, PA)  1
+Hinton Thomas (Pittsburgh, PA) 1
+Zubiate Brett (Duxbury, MA)  1
 Choset Howard (Pittsburgh, PA) 1
-Falo, JR. Louis D. (Wexford, PA)  1
-Higgs, III C. Fred (Pittsburgh, PA)  1
-Jackson Thomas Christopher (Pittsburgh, PA)  1
+Smailagic Asim (Pittsburgh, PA)  1
 Siewiorek Daniel (Pittsburgh, PA) 1
-SCHNEIDERMAN Henry (Pittsburgh, PA) 1
+Zeng Yukai (Singapore, SG)  1
+Leduc Philip R. (Pittsburgh, PA)  1
+Chiam Keng-Hwee (Singapore, SG) 1
+Falo, JR. Louis D. (Wexford, PA)  1
+Erdos Geza (Wexford, PA)  1
 Ozdoganlar O. Burak (Sewickley, PA) 1
+Fedder Gary K. (Turtle Creek, PA)  1
+Ozdoganlar Burak (Sewickley, PA)  1
+Gilgunn Peter J. (Pittsburgh, PA) 1
+Pileggi Lawrence (Pittsburgh, PA)  1
+Bromberg David M. (Pittsburgh, PA)  1
+Sumbul Huseyin E. (Pittsburgh, PA) 1
+Pileggi Lawrence Thomas (Pittsburgh, PA)  1
+Sharma Abhishek Anil (Pittsburgh, PA)  1
+Jackson Thomas Christopher (Pittsburgh, PA)  1
+Weldon Jeffrey Arthur (Pittsburgh, PA) 1
+SCHNEIDERMAN Henry (Pittsburgh, PA) 1
+Higgs, III C. Fred (Pittsburgh, PA)  1
+LeDuc Philip R. (Pittsburgh, PA)  1
+Warren Kristin M. (Pittsburgh, PA)  1
+Mpagazehe Jeremiah N. (Pittsburgh, PA) 1
+LY Danith H. (Pittsburgh, PA)  1
+RAPIREDDY Srinivas (Pittsburgh, PA)  1
+SAHU Bichismita (Pittsburgh, PA) 1

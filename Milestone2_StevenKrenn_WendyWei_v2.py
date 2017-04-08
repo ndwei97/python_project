@@ -51,7 +51,7 @@ def find_inventors():
 
 
 	inventor_names = []		# store all formated names of inventors from those 15 patents
-	for i in range(0,15):
+	for i in range(len(begining_indexes)):
 		names = []
 		first = begining_indexes[i]
 		last = ending_indexes[i]
