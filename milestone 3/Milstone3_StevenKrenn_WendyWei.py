@@ -1,15 +1,16 @@
-# Milestone 2 
+# Milestone 2
 # Date: 04/16/2017
 # Names: Steven Krenn, Wendy Wei
-# 
+#
 import re
 import csv
+import operator
 
 def main():
 
 	#========== INPUT FILE =============
 	patentfile = open('Milestone2_StevenKrenn_WendyWei.txt', 'r', encoding = "utf-8", errors = "ignore")
-	file_content = str(patentfile.read()).lower()		# store all 15 patents' contents 	
+	file_content = str(patentfile.read()).lower()		# store all 15 patents' contents
 	file_content = re.split('\W+', file_content)	# split the text content and exclude all the special characters.
 
 	#========== DELECT NOISE =============
@@ -31,7 +32,7 @@ def main():
 		for row in readCSV:
 			old.append(row[0])	# convert the first column to a list of words that needs to be changed
 			new.append(row[1]) 	# convert the second column to a list of words that needs to be changed into
-	
+
 	replaced_content = str(noiseless_content)
 	mapping = dict(zip(old,new))	# create a dictionary with the keys being old words and values being new words
 	for k, v in mapping.items():
@@ -43,10 +44,15 @@ def main():
 	counts = dict()
 	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
 		counts[j] = counts.get(j, 0) + 1
-	print(counts)
+	#print(counts)
+
+	sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
+
+
+	for elem in sorted_x[-30:]:
+		print(elem)
 
 
 
 
-	
 main();
