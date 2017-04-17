@@ -9,7 +9,7 @@ def main():
 
 	#========== INPUT FILE =============
 	patentfile = open('Milestone2_StevenKrenn_WendyWei.txt', 'r', encoding = "utf-8", errors = "ignore")
-	file_content = str(patentfile.read())		# store all 15 patents' contents 	
+	file_content = str(patentfile.read()).lower()		# store all 15 patents' contents 	
 	file_content = re.split('\W+', file_content)	# split the text content and exclude all the special characters.
 
 	#========== DELECT NOISE =============
@@ -36,9 +36,15 @@ def main():
 	mapping = dict(zip(old,new))	# create a dictionary with the keys being old words and values being new words
 	for k, v in mapping.items():
 		replaced_content = replaced_content.replace(k, v)	# replace each old word in file with the new word
-	# print(replaced_content)
+	replaced_content = re.split('\W+', replaced_content)
+	# print(len(replaced_content))
 
 	#=========== KEY WORDS ===============
+	counts = dict()
+	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
+		counts[j] = counts.get(j, 0) + 1
+	print(counts)
+
 
 
 
