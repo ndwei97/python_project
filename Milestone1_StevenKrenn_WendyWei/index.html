@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+Project Milestone 1
+Steven Krenn
+Wendy Wei
+3/31/17
+3/31/17
+Index/Home page for the project milestone 1
+-->
+<html lang="en">
+    <!-- header information -->
+    <head>
+        <title>Milestone - 1</title>
+
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,400i,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,600,700" rel="stylesheet">
+
+        <link rel = "stylesheet" href= "css/mystyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+      <!-- dropdown menu -->
+      <div class="dropdown">
+      <button onclick="dropDownFunction()" class="dropbtn">Categories</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="index.html">Home </a>
+          <a href="#category_1">Category 1</a>
+          <a href="#category_2">Category 2</a>
+          <a href="#category_3">Category 3</a>
+          <a href="#category_4">Category 4</a>
+          <a href="#category_5">Category 5</a>
+        </div>
+      </div>
+
+      <script>
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      function dropDownFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+      </script>
+      <!-- end dropdown menu-->
+
+        <div class="row">
+            <div style="height:80px"></div>
+            <div class="col-md-6">
+              <!-- main title -->
+                <h1 align="center">Patent Search</h1>
+                <!-- search bar -->
+                <form align="center"><input type="text" name="search" placeholder="Search..."></form>
+                <div class="space30px"></div>
+                  <!-- Search and Reset buttons -->
+                  <div style="text-align: center">
+                    <a href="result.html" class='button'>Search</a>
+                    <a href="index.html" class='button'>Reset</a>
+                  </div>
+                <div class="space30px"></div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
