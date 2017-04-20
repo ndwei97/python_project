@@ -53,7 +53,7 @@ def main():
 	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)	# ordering the key words so the most frequent ones appear first
 	# sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
 
-	with open('index.html') as fin, open('index.html','w') as fout:	 	# output  each key word into index.html
+	with open('base.html') as fin, open('index.html','w') as fout:	 	# output  each key word into index.html
 		for line in fin:
 			fout.write(line)
 			if line == '        <div id="myDropdown" class="dropdown-content">\n':
