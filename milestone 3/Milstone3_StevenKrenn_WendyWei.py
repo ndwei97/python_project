@@ -4,7 +4,7 @@
 #
 import re
 import csv
-import operator
+#import operator
 
 def main():
 
@@ -47,7 +47,8 @@ def main():
 # <<<<<<< Updated upstream
 # 	#print(counts)
 
-	sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
+	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)
+	# sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
 
 	with open('index.html') as fin, open('index_1.html','w') as fout:
 		for line in fin:
@@ -56,7 +57,7 @@ def main():
 				next_line = next(fin)
 				if next_line == '          <a href="index.html">Home </a>\n':
 					for elem in sorted_x:
-						fout.write('     <a href="index.html">' + str(elem) + '</a>\n')
+						fout.write('     <a href="index.html">' + str(elem[0]) + '</a>\n')
 					fout.write(next_line)
 
 	# for elem in sorted_x[-30:]:
