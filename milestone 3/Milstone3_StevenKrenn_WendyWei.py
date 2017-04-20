@@ -1,10 +1,14 @@
-# Milestone 2
-# Date: 04/16/2017
+# Milestone 3
+# Date Created: 04/16/2017
+# Date Last Modified: 04/19/2017
 # Names: Steven Krenn, Wendy Wei
-#
+# This tool allows user to input a txt file and extract keywords out of it and then output it in an html file.
+# Before extracting the keywords, this tool first performs text analysis using the delete junk words and substituting miss-spelling words.
+# Then it pull out a list of keywords and order them so the most frequent word appears first.
+# Finally, this tool output all the keywords into an html file.
 import re
 import csv
-#import operator
+
 
 def main():
 
@@ -44,13 +48,12 @@ def main():
 	counts = dict()
 	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
 		counts[j] = counts.get(j, 0) + 1
-# <<<<<<< Updated upstream
-# 	#print(counts)
 
-	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)
+
+	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)	# ordering the key words so the most frequent ones appear first
 	# sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
 
-	with open('index.html') as fin, open('index_1.html','w') as fout:
+	with open('index.html') as fin, open('index.html','w') as fout:	 	# output  each key word into index.html
 		for line in fin:
 			fout.write(line)
 			if line == '        <div id="myDropdown" class="dropdown-content">\n':
@@ -59,10 +62,6 @@ def main():
 					for elem in sorted_x:
 						fout.write('     <a href="index.html">' + str(elem[0]) + '</a>\n')
 					fout.write(next_line)
-
-	# for elem in sorted_x[-30:]:
-	# 	print(elem)
-
 
 
 
