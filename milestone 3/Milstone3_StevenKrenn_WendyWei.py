@@ -48,9 +48,18 @@ def main():
 
 	sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
 
+	with open('index.html') as fin, open('index_1.html','w') as fout:
+		for line in fin:
+			fout.write(line)
+			if line == '        <div id="myDropdown" class="dropdown-content">\n':
+				next_line = next(fin)
+				if next_line == '          <a href="index.html">Home </a>\n':
+					for elem in sorted_x:
+						fout.write('     <a href="index.html">' + str(elem) + '</a>\n')
+					fout.write(next_line)
 
-	for elem in sorted_x[-30:]:
-		print(elem)
+	# for elem in sorted_x[-30:]:
+	# 	print(elem)
 
 
 
