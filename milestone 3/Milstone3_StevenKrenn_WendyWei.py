@@ -44,7 +44,8 @@ def main():
 	counts = dict()
 	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
 		counts[j] = counts.get(j, 0) + 1
-	#print(counts)
+# <<<<<<< Updated upstream
+# 	#print(counts)
 
 	sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
 
@@ -61,6 +62,34 @@ def main():
 	# for elem in sorted_x[-30:]:
 	# 	print(elem)
 
+# 	for elem in sorted_x[-30:]:
+# 		print(elem)
+# =======
+
+# 	sorted_counts = sorted(counts.items(), key=operator.itemgetter(1))
+
+# 	# print(sorted_counts)
+
+# #
+# 	import numpy as np
+# 	import scipy.stats as stats
+# 	import matplotlib.pyplot as pl
+# 	h = []
+
+# 	h = sorted(list(counts.values()))
+# 	# print(h)
+# 	# h = sorted([186, 176, 158, 180, 186, 168, 168, 164, 178, 170, 189, 195, 172,
+# 	#      187, 180, 186, 185, 168, 179, 178, 183, 179, 170, 175, 186, 159,
+# 	#      161, 178, 175, 185, 175, 162, 173, 172, 177, 175, 172, 177, 180])  #sorted
+
+# 	# fit = stats.norm.pdf(h, np.mean(h), np.std(h))  #this is a fitting indeed
+
+# 	# pl.plot(h,fit,'-o')
+
+# 	pl.hist(h,normed=True)      #use this to draw histogram of your data
+# >>>>>>> Stashed changes
+
+# 	pl.show()                   #use may also need add this
 
 
 
