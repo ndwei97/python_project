@@ -5,10 +5,20 @@ import re
 
 def main():
 
-	find_patents()
+	mapp = get_patent_map()
+
+	search1 = search(mapp, 'cells')
+
+	print(search1, sep='\n\n')
+	print('\n\n\n\n\n')
+
+	search2 = search(mapp, 'grain')
+	print(search2, sep='\n\n')
 
 
-def find_patents():
+
+
+def get_patent_map():
 
 #========= Get Patent Titiles ==============
 	with open('Milestone2_StevenKrenn_WendyWei.txt','r') as f:	# split patent file content by line break
@@ -42,9 +52,6 @@ def find_patents():
 
 	#print(*allPatentInfo, sep = '\n\n')
 
-
-
-
 #========== Get Patent Line Number =============
 	word = '* * * * *' #  word of interest to anchor the last line of each patent
 	patent_i =[]
@@ -60,9 +67,18 @@ def find_patents():
 	intervals = list(zip(start,end))	# create a list of index intervals for each patent
 	mapp = dict(zip(intervals,allPatentInfo))	# link each interval to associate patent title
 
+	return mapp
 
+
+
+def search(mapp, word):
 #=========== Get Keywords =============
-	word = 'cells' # word of interest to anchor the line index for each key words
+	#word = 'cells' # word of interest to anchor the line index for each key words
+
+	# this is kinda rough, may slow down the code
+	with open('Milestone2_StevenKrenn_WendyWei.txt','r') as f:	# split patent file content by line break
+	    lines = f.read().split("\n")
+
 	key_i =[]
 		# iterate over lines, and print out line numbers which contain
 		# the word of interest.
@@ -79,7 +95,9 @@ def find_patents():
 
 	result = set(result)
 
-	print(*result, sep='\n\n')
+	#print(*result, sep='\n\n')
+
+	return result
 
 
 

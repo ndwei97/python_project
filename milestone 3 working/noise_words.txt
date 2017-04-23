@@ -252,3 +252,5 @@ allow
 alternatively
 fixed
 making
+index
+base
