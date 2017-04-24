@@ -58,13 +58,13 @@ def search(mapp, word):
 
 	# this is kinda rough, may slow down the code
 	with open('Milestone2_StevenKrenn_WendyWei.txt','r') as f:	# split patent file content by line break
-	    
+
 		lines = f.read().split("\n")
 		# lines = [s.strip(';') for s in lines]
 		# lis = ['sssss;','aaaa;','cccd;']
 		# lis = [s.strip(';') for s in lis]
 		# print(*lines[:100], sep = '\n')
-		# investors = str(lines[8])	
+		# investors = str(lines[8])
 		# investors = [s.strip(';') for s in investors]
 
 
@@ -90,7 +90,7 @@ def search(mapp, word):
 
 
 def get_investors():
-	
+
 	patentfile = open('Milestone2_StevenKrenn_WendyWei.txt', 'r', encoding = "utf-8", errors = "ignore")
 	file_content = str(patentfile.read())		# store all 15 patents' contents
 	file_content = file_content.lower()
@@ -117,26 +117,30 @@ def get_investors():
 		inventor_names.append(names)
 		roster.extend(names)
 
-	roster = list(set(roster)) # unique list of inventor names 	
+	roster = list(set(roster)) # unique list of inventor names
 	# print(len(roster))
 	# print(*roster, sep ='\n')
 
 	mapp_inv = tuple(enumerate(inventor_names)) # link each list of inventors with application index
 	# print(*mapp, sep = '\n')
 
-	result = []
+	indx_result = []
+	word_result = []
 	mapp_pat = get_patent_map()
-	n = 0 
-	
+	n = 0
+
 	for n in range(len(roster)):
 		word = roster[n]
 		for i,patent in mapp_inv:
 			if word in patent:
-				print(word,i) 
+				# print(word,i)
 				# info = dict.values(mapp_pat)
-				result.append(i)
-	# print(*result, sep ='\n')
-	
+				word_result.append(word)
+				indx_result.append(i)
+
+	inventor_patIndex = zip(word_result, indx_result)
+	print(*inventor_patIndex, sep ='\n')
+
 
 def main():
 
