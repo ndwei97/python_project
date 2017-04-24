@@ -4,10 +4,10 @@
 # Names: Steven Krenn, Wendy Wei
 
 
-# This tool allows user to input a txt file and extract keywords out of it and then output it in an html file.
-# Before extracting the keywords, this tool first performs text analysis using the delete junk words and substituting miss-spelling words.
-# Then it pull out a list of keywords and order them so the most frequent word appears first.
-# Finally, this tool output all the keywords into an html file.
+# The purpose of this tool is to help clients to obtain patent information based on 
+# keywords and inventor names. For each keyword/inventor will link to an html page 
+# should list ALL of the patent application name(s), application number(s), and inventor(s) 
+# that are linked to that keyword/inventor.
 
 # imports re and csv
 import re
