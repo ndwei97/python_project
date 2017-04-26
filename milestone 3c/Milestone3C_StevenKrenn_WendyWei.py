@@ -2,6 +2,9 @@
 import requests
 from bs4 import BeautifulSoup
 
+def altElement(a):
+    return a[::2]
+
 def get_links():
 	# Scrape the patent website
 	r = requests.get('http://appft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.html&r=0&p=1&f=S&l=50&Query=aanm%2F%22carnegie+mellon%22+AND+PD%2F4%2F1%2F2016-%3E6%2F30%2F2016&d=PG01')
@@ -17,13 +20,19 @@ def get_links():
 
 	header = 'http://appft.uspto.gov/'
 
-	newlink = requests.get(header + links[9])
+	#print(len(links))
+	#print(header + links[9])
+	for link in links:
+		if 8 < links.index(link) < 39:
+			if (links.index(link)%2 == 1):
+				newlink = requests.get(header + link)
 
-	#print(newlink.text)
+				content =  newlink.text
 
-	newlinksoup = BeautifulSoup(newlink.text,'html.parser')
+				newlinksoup = BeautifulSoup(content,'html.parser')
 
-	print(soup.get_text())
+				fileout = open('output.txt', 'a')
+				fileout.write(newlinksoup.get_text())
 
 
 
