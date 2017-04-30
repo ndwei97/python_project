@@ -1,132 +1,66 @@
+# Milestone 3c
+# Date Created: 4/26/17
+# Date Last Modified: 4/30/17
+# Names: Steven Krenn, Wendy Wei
 
+
+# imports the re library
+import re
+# imports the csv library
+import csv
+# imports the requests library
 import requests
+# imports the BeautifulSoup library
 from bs4 import BeautifulSoup
 
-
+# the get_links function scrapes the website using the requests library
+# then parses the website to get the 15 important patent links out of it
+# then saves all of the text of each patent file to output.txt
 def get_links():
 	# Scrape the patent website
 	r = requests.get('http://appft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.html&r=0&p=1&f=S&l=50&Query=aanm%2F%22carnegie+mellon%22+AND+PD%2F4%2F1%2F2016-%3E6%2F30%2F2016&d=PG01')
 	content = r.text
+	# creates a beautiful soup object on the scraped website
 	soup = BeautifulSoup(content,'html.parser')
+	# initialization of a links list
 	links = []
-	# prints out the all the links on the site
+	# appends all of the links on the site
 	# as a list
 	for link in soup.find_all('a'):
 	    links.append(link.get('href'))
 
-	print(*links, sep='\n\n')
-
+	# initialization of a header string that will be added to
+	# all of the patent links
 	header = 'http://appft.uspto.gov/'
 
-	#print(len(links))
-	#print(header + links[9])
+	# the links list has all of the links in the website in it
+	# we only need links to the patents that is links 8 through 39
 	links = links[8:39]
+	# the links in the list are repeated twice because the scraped website prints
+	# the same link for the patent number, and the title
+	# so this saves the list as every other object in the list
+	# e.g. [1, 1, 2, 2, 3, 3] would be [1, 2, 3]
 	links = links[1::2]
+	# for every link in the links list
 	for link in links:
+		# print which link is being processes
 		print(links.index(link))
+		# create a requests object with the header + the link
 		newlink = requests.get(header + link)
-
+		# get the text from the requests object
 		content =  newlink.text
-
+		# create a BeautifulSoup object form the content and parse it
 		newlinksoup = BeautifulSoup(content,'html.parser')
-
+		# Create or append a text file called output.txt
 		fileout = open('output.txt', 'a')
+		# write all of the information from the BeautifulSoup object
+		# to a text file named 'output.txt'
 		fileout.write(newlinksoup.get_text())
+		# close the file
 		fileout.close()
 
-# Milestone 3
-# Date Created: 04/16/2017
-# Date Last Modified: 04/19/2017
-# Names: Steven Krenn, Wendy Wei
-# This tool allows user to input a txt file and extract keywords out of it and then output it in an html file.
-# Before extracting the keywords, this tool first performs text analysis using the delete junk words and substituting miss-spelling words.
-# Then it pull out a list of keywords and order them so the most frequent word appears first.
-# Finally, this tool output all the keywords into an html file.
-import re
-import csv
 
-def get_patent_map():
-
-	#========= Get Patent Titiles ==============
-	with open('output.txt','r') as f:	# split patent file content by line break
-	    lines = f.read().split("\n")
-
-	word = 'United States Patent Application' # word of interest to anchor the line number for each patent name
-	titles =[]
-	# iterate over lines, and print out line numbers which contain
-	# the word of interest.
-	for i,line in enumerate(lines):
-	    if word in line:
-	        titles.append(lines[i+3]) # obtain a list of title indexes
-
-	word = 'Appl. No.:	'
-	appl_num = []
-
-	for i, line in enumerate(lines):
-		if word in line:
-			appl_num.append(lines[i])
-	#print(appl_num)
-
-	word = 'Applicant:	'
-	invent_num = []
-
-	for i, line in enumerate(lines):
-		if word in line:
-			invent_num.append(lines[i-1])
-	#print(invent_num)
-
-	allPatentInfo = zip(titles,appl_num,invent_num)
-
-	#print(*allPatentInfo, sep = '\n\n')
-
-	#========== Get Patent Line Number =============
-	word = '* * * * *' #  word of interest to anchor the last line of each patent
-	patent_i =[]
-	# iterate over lines, and print out line numbers which contain
-	# the word of interest.
-	for i,line in enumerate(lines):
-	    if word in line:
-	        patent_i.append(i+1)	# obtain a list of ending line indexes for each patent
-
-	start = patent_i[:-1] 	# create a list of starting line indexes for each paten
-	start.insert(0,0)
-	end = patent_i
-	intervals = list(zip(start,end))	# create a list of index intervals for each patent
-	mapp = dict(zip(intervals,allPatentInfo))	# link each interval to associate patent title
-
-	return mapp
-
-def search(mapp, word):
-	#=========== Get Keywords =============
-	#word = 'cells' # word of interest to anchor the line index for each key words
-
-	# this is kinda rough, may slow down the code
-	with open('output.txt','r') as f:	# split patent file content by line break
-	    lines = f.read().split("\n")
-
-	key_i =[]
-		# iterate over lines, and print out line numbers which contain
-		# the word of interest.
-	for i,line in enumerate(lines):
-		if word in line:
-			key_i.append(i+1)	# obtain a list of keyword indexes
-	# print(key_i)
-
-	result = []
-	for k in key_i:
-	    for m in mapp:
-	        if m[0] < k < m[1]:		# find each keyword index in each of the patent intervals
-	            result.append(mapp[m])	# obtain a list of patent titles which have keyword included in their content
-
-	result = set(result)
-
-	#print(*result, sep='\n\n')
-
-	return result
-
-def main():
-	get_links()
-
+def delete_noise_and_replacemnts():
 	#========== INPUT FILE =============
 	patentfile = open('output.txt', 'r', encoding = "utf-8", errors = "ignore")
 	file_content = str(patentfile.read()).lower()		# store all 15 patents' contents
@@ -158,7 +92,9 @@ def main():
 		replaced_content = replaced_content.replace(k, v)	# replace each old word in file with the new word
 	replaced_content = re.split('\W+', replaced_content)
 	# print(len(replaced_content))
+	return replaced_content
 
+def keywords(replaced_content):
 	#=========== KEY WORDS ===============
 	counts = dict()
 	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
@@ -166,23 +102,36 @@ def main():
 
 
 	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)	# ordering the key words so the most frequent ones appear first
-	# sorted_x = sorted(counts.items(), key=operator.itemgetter(1))
 
-	mapp = get_patent_map()
+	return sorted_x
 
 
+def main():
+	# scrape the internet for the list of links
+	get_links()
+	# get rid of any noise and miss-spellings in the scraped text file
+	replaced_content = delete_noise_and_replacemnts()
+
+	# get a sorted dictionary of keywords
+	sorted_x = keywords(replaced_content)
+
+	# open the base.html file and create the index.html file
 	with open('base.html') as fin, open('index.html','w') as fout:	 	# output  each key word into index.html
+		# replace each line in base with index
 		for line in fin:
 			fout.write(line)
+			# find in the file to output all of the keywords to index.html
+			# if the link is:
 			if line == '        <div id="myDropdown" class="dropdown-content">\n':
 				next_line = next(fin)
+				# and the next line is:
 				if next_line == '          <a href="index.html">Home </a>\n':
+					# for every element in sorted_x write a line for each keyword
 					for elem in sorted_x:
 						fout.write('     <a href="' + str(elem[0]) + '.html">' + str(elem[0]) + '</a>\n')
-						#new = open(str(elem[0]) + ".html", 'w')
-						#new.write(str(search(mapp, str(elem[0]))))
+					# finish writing base.html to index.html
 					fout.write(next_line)
 
 
-
-main();
+# calls the main function
+main()
