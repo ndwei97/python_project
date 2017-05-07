@@ -1,30 +1,30 @@
-(17316, 18858)
-CONFORMATIONALLY-PREORGANIZED, MiniPEG-CONTAINING GAMMA-PEPTIDE NUCLEIC     ACIDS14/921755['', 'LY; Danith H.; (Pittsburgh, PA)', '; RAPIREDDY; Srinivas; (Pittsburgh, PA)', '; SAHU; Bichismita; (Pittsburgh, PA)', '']
-(2300, 3556)
-RELIABILITY OF PHYSICAL UNCLONABLE FUNCTION CIRCUITS14/913285['', 'Mai; Kenneth Wei-An; (Pittsburgh, PA)', '; Bhargava; Mudit; (Pittsburgh, PA)', '']
-(7281, 8614)
-METHODS, APPARATUSES, AND SYSTEMS FOR CELL AND TISSUE CULTURE14/908414['', 'Zeng; Yukai; (Singapore, SG)', '; Leduc; Philip R.; (Pittsburgh, PA)', '; Chiam; Keng-Hwee; (Singapore, SG)', '']
-(6565, 7281)
-Emotion Recognition System and Method for Modulating the Behavior of     Intelligent Systems14/960335['', 'Smailagic; Asim; (Pittsburgh, PA)', '; Siewiorek; Daniel; (Pittsburgh, PA)', '']
 (0, 1490)
-GRAIN QUALITY MONITORING14/583473['', 'Wellington; Carl Knox; (Pittsburgh, PA)', '; Bruns; Aaron J.; (Bettendorf, IA)', '; Sierra; Victor S.; (Waukee, IA)', '; Phelan; James J.; (Bettendorf, IA)', '; Hageman; John M.; (Silvis, IL)', '; Dima; Cristian; (Sankt Ingbert, GE)', '; Boesch; Hanke; (Tiefenthal, GE)', '; Herman; Herman; (Gibsonia, PA)', '; Pezzementi; Zachary Abraham; (Pittsburgh, PA)', '; Male; Carson Robert; (Pittsburgh, PA)', '; Campoy; Joan; (Pittsburgh, PA)', '; Vallespi-gonzalez; Carlos; (Pittsburgh, PA)', '']
-(13184, 15847)
-OBJECT RECOGNIZER AND DETECTOR FOR TWO-DIMENSIONAL IMAGES USING BAYESIAN     NETWORK BASED CLASSIFIER14/937851['', 'SCHNEIDERMAN; Henry; (Pittsburgh, PA)', '']
-(15847, 17316)
-Methods, Devices and Systems for Algae Lysis and Content Extraction14/764906['', 'Higgs, III; C. Fred; (Pittsburgh, PA)', '; LeDuc; Philip R.; (Pittsburgh, PA)', '; Warren; Kristin M.; (Pittsburgh, PA)', '; Mpagazehe; Jeremiah N.; (Pittsburgh, PA)', '']
-(11651, 12543)
-BITCELL WTH MAGNETIC SWITCHING ELEMENTS14/898580['', 'Pileggi; Lawrence; (Pittsburgh, PA)', '; Bromberg; David M.; (Pittsburgh, PA)', '; Sumbul; Huseyin E.; (Pittsburgh, PA)', '']
+GRAIN QUALITY MONITORING14/583473Wellington Carl Knox, Bruns Aaron J., Sierra Victor S., Phelan James J., Hageman John M., Dima Cristian, Boesch Hanke, Herman Herman, Pezzementi Zachary Abraham, Male Carson Robert, Campoy Joan, Vallespi-gonzalez Carlos
 (1490, 2300)
-CONTROL ARRANGEMENT AND METHOD FOR CONTROLLING A POSITION OF A TRANSFER     DEVICE OF A HARVESTING MACHINE15/065125['', 'Herman; Herman; (Gibsonia, PA)', '; Bonefas; Zachary T.; (Grimes, IA)', '; Vallespi-Gonzalez; Carlos; (Pittsburgh, PA)', '; Zametzer; Johannes Josef; (Zweibruecken, DE)', '']
-(5753, 6565)
-EXTENDABLE ARTICULATED PROBE DEVICE14/579224['', 'Zubiate; Brett; (Duxbury, MA)', '; Choset; Howard; (Pittsburgh, PA)', '']
-(10574, 11651)
-FABRICATION, METHODS, APPARATUSES, AND SYSTEMS FOR ULTRA-COMPLIANT PROBES     FOR NEURAL AND OTHER TISSUES14/962016['', 'Fedder; Gary K.; (Turtle Creek, PA)', '; Ozdoganlar; Burak; (Sewickley, PA)', '; Gilgunn; Peter J.; (Pittsburgh, PA)', '']
-(4670, 5753)
-ADDITIVE MANUFACTURING OF EMBEDDED MATERIALS14/908637['', 'Feinberg; Adam; (Pittsburgh, PA)', '; Hinton; Thomas; (Pittsburgh, PA)', '']
-(12543, 13184)
-Physically Unclonable Functions Using Neuromorphic Networks14/931592['', 'Pileggi; Lawrence Thomas; (Pittsburgh, PA)', '; Sharma; Abhishek Anil; (Pittsburgh, PA)', '; Jackson; Thomas Christopher; (Pittsburgh, PA)', '; Weldon; Jeffrey Arthur; (Pittsburgh, PA)', '']
+CONTROL ARRANGEMENT AND METHOD FOR CONTROLLING A POSITION OF A TRANSFER     DEVICE OF A HARVESTING MACHINE15/065125Herman Herman, Bonefas Zachary T., Vallespi-Gonzalez Carlos, Zametzer Johannes Josef
+(2300, 3556)
+RELIABILITY OF PHYSICAL UNCLONABLE FUNCTION CIRCUITS14/913285Mai Kenneth Wei-An, Bhargava Mudit
 (3556, 4670)
-STEERABLE, FOLLOW THE LEADER DEVICE14/642023['', 'Choset; Howard M.; (Pittsburgh, PA)', '; Wolf; Alon; (Haifa, IL)', '; Zenati; Marco A.; (Pittsburgh, PA)', '']
+STEERABLE, FOLLOW THE LEADER DEVICE14/642023Choset Howard M., Wolf Alon, Zenati Marco A.
+(4670, 5753)
+ADDITIVE MANUFACTURING OF EMBEDDED MATERIALS14/908637Feinberg Adam, Hinton Thomas
+(5753, 6565)
+EXTENDABLE ARTICULATED PROBE DEVICE14/579224Zubiate Brett, Choset Howard
+(6565, 7281)
+Emotion Recognition System and Method for Modulating the Behavior of     Intelligent Systems14/960335Smailagic Asim, Siewiorek Daniel
+(7281, 8614)
+METHODS, APPARATUSES, AND SYSTEMS FOR CELL AND TISSUE CULTURE14/908414Zeng Yukai, Leduc Philip R., Chiam Keng-Hwee
 (8614, 10574)
-MICRONEEDLE ARRAYS FOR CANCER THERAPY APPLICATIONS14/934927['', 'Falo, JR.; Louis D.; (Wexford, PA)', '; Erdos; Geza; (Wexford, PA)', '; Ozdoganlar; O. Burak; (Sewickley, PA)', '']
+MICRONEEDLE ARRAYS FOR CANCER THERAPY APPLICATIONS14/934927Falo, JR. Louis D., Erdos Geza, Ozdoganlar O. Burak
+(10574, 11651)
+FABRICATION, METHODS, APPARATUSES, AND SYSTEMS FOR ULTRA-COMPLIANT PROBES     FOR NEURAL AND OTHER TISSUES14/962016Fedder Gary K., Ozdoganlar Burak, Gilgunn Peter J.
+(11651, 12543)
+BITCELL WTH MAGNETIC SWITCHING ELEMENTS14/898580Pileggi Lawrence, Bromberg David M., Sumbul Huseyin E.
+(12543, 13184)
+Physically Unclonable Functions Using Neuromorphic Networks14/931592Pileggi Lawrence Thomas, Sharma Abhishek Anil, Jackson Thomas Christopher, Weldon Jeffrey Arthur
+(13184, 15847)
+OBJECT RECOGNIZER AND DETECTOR FOR TWO-DIMENSIONAL IMAGES USING BAYESIAN     NETWORK BASED CLASSIFIER14/937851SCHNEIDERMAN Henry
+(15847, 17316)
+Methods, Devices and Systems for Algae Lysis and Content Extraction14/764906Higgs, III C. Fred, LeDuc Philip R., Warren Kristin M., Mpagazehe Jeremiah N.
+(17316, 18858)
+CONFORMATIONALLY-PREORGANIZED, MiniPEG-CONTAINING GAMMA-PEPTIDE NUCLEIC     ACIDS14/921755LY Danith H., RAPIREDDY Srinivas, SAHU Bichismita
