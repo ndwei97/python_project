@@ -69,7 +69,7 @@ def get_patent_map_new():
 	# so the first section of this function finds the lines
 	# where the titles, appl. numbers, and inventors are.
 	# it takes those 3 different lists and zips them together
-	title = get_patent_title()
+	titles = get_patent_title()
 	appl_num = get_app_num()
 	inventor_names = get_inventors()
 	
@@ -78,6 +78,9 @@ def get_patent_map_new():
 
 
 	#========== Get Patent Line Number =============
+	with open('output.txt','r') as f:	# split patent file content by line break
+		lines = f.read().split("\n")
+
 	word = '* * * * *' #  word of interest to anchor the last line of each patent
 	patent_i =[]
 	# iterate over lines, and print out line numbers which contain
