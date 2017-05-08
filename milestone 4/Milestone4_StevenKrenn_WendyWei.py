@@ -455,7 +455,9 @@ def main():
 	noiseless_content = []
 	for w in file_content:	# find every word in file
 		if w.lower() not in noise_words:	# convert each word to lower case and determine if it is noise word.
-			noiseless_content.append(w) 	# if the word is not in noise word list, append it to the content list.
+			if len(w) > 3:		# get rid of all words smaller than 3 character
+				if not any(str.isdigit(c) for c in w): 		# get rid of all words that contain numbers
+					noiseless_content.append(w) 	# if the word meets all requirements, append it to the content list.
 
 	#========== WORD REPLACEMENT ===========
 
@@ -478,6 +480,7 @@ def main():
 	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
 		counts[j] = counts.get(j, 0) + 1
 
+	counts = { k:v for k, v in counts.items() if v > 10} 	# Get rid of all the keywords with frequency less than 10	
 
 	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)	# ordering the key words so the most frequent ones appear first
 
