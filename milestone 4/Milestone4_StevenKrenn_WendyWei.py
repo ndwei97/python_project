@@ -3,8 +3,6 @@
 # Date Last Modified: 04/23/2017
 # Names: Steven Krenn, Wendy Wei
 
-# Ported from 3B
-
 # The purpose of this tool is to help clients to obtain patent information based on
 # keywords and inventor names. For each keyword/inventor will link to an html page
 # should list ALL of the patent application name(s), application number(s), and inventor(s)
@@ -131,10 +129,6 @@ def get_inventors():
 		names =[ ''.join(x) for x in zip(names[0::2], names[1::2]) ] 	# join first name and last name into one element
 		names = ','.join(names)		# join all inventor names for this patent and seperate them by ','
 		inventor_names.append(names)  	# store all formated names of inventors from this patent
-
-	for i in inventor_names:
-		print(i)
-		print('\n\n\n')
 
 	return inventor_names
 
@@ -353,10 +347,6 @@ def get_inventors_old():
 	# 2 dimensionial list
 	inventor_patIndex = zip(word_result, indx_result)
 
-	for i in inventor_names:
-		print(i)
-		print('\n\n\n')
-
 	# returns the 2 dimensionial list
 	return inventor_patIndex
 
@@ -441,7 +431,7 @@ def main():
 	# scrape the internet for the list of links
 	get_links()
 
-	inventors_list = get_inventors_old()
+	inventors_list = get_inventors()
 
 	#========== INPUT FILE =============
 	patentfile = open('output.txt', 'r', encoding = "utf-8", errors = "ignore")
@@ -480,7 +470,8 @@ def main():
 	for j in replaced_content:	#  Create a dictionary of keywords assoricated with counts
 		counts[j] = counts.get(j, 0) + 1
 
-	counts = { k:v for k, v in counts.items() if v > 10} 	# Get rid of all the keywords with frequency less than 10	
+	counts = { k:v for k, v in counts.items() if v > 10} 	# Get rid of all the keywords with frequency less than 10
+
 
 	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)	# ordering the key words so the most frequent ones appear first
 
@@ -540,9 +531,17 @@ def main():
 									new.writelines('</h3>')
 								# if it's not the first time looping the list
 								# just write it normally
+								if titleHeading == 1:
+									new.writelines(str(i))
 								else:
 									# write the list normally
-									new.writelines(str(i))
+									#new.writelines(str(i))
+									for elem in inventors_list:
+										splitted_i = str(i).split(',')
+										splitted_elem = elem.split(',')
+										if splitted_i == splitted_elem:
+											for splitted_elem_i in splitted_elem:
+												new.write('     <a href="' + urlify(str(splitted_elem_i)) + '.html">' + str(splitted_elem_i) + '</a>\n')
 
 								# write an ending p tag
 								new.writelines('</p>')
@@ -568,18 +567,3 @@ def main():
 
 # calls the main function
 main()
-
-
-
-
-
-#get_links()
-#get_inventors_old()
-
-	# get the inventor lists and return it to
-	# the inventor_patIndex variable
-#inventor_patIndex = get_inventors_old()
-
-	# use the inventor_patIndex as an input for the creation
-	# of the inventor html files
-#create_inventors_html(inventor_patIndex)
