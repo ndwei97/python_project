@@ -23,7 +23,6 @@ import requests
 # imports the BeautifulSoup library
 from bs4 import BeautifulSoup
 
-
 # the get_links function scrapes the website using the requests library
 # then parses the website to get the 15 important patent links out of it
 # then saves all of the text of each patent file to output.txt
@@ -38,7 +37,7 @@ def get_links():
 	# appends all of the links on the site
 	# as a list
 	for link in soup.find_all('a'):
-	    links.append(link.get('href'))
+		links.append(link.get('href'))
 
 	# initialization of a header string that will be added to
 	# all of the patent links
@@ -72,14 +71,123 @@ def get_links():
 
 
 
+def get_patent_title():
+
+	with open('output.txt','r') as f:	# split patent file content by line break
+		lines = f.read().split("\n")
+
+	word = ' United States Patent Application' # word of interest to anchor the line number for each patent name
+	# initialization of the title array
+	titles =[]
+	# iterate over lines, and print out line numbers which contain
+	# the word of interest.
+	for i,line in enumerate(lines):
+		if word in line:
+			if lines[i+18] != '':
+				# print(str(lines[i+17]) + str(lines[i+18]))
+				# print()
+				titles.append(lines[i+17] + lines[i+18]) # obtain a list of title indexes
+			else:
+				titles.append(lines[i+17])
+				# print(str(lines[i+17]))
+				# print()
+	return titles
+def get_app_num():
+	with open('output.txt','r') as f:	# split patent file content by line break
+		lines = f.read().split("\n")
+
+	# sets the search file for application numbers
+	word = 'Appl. No.:'
+	# initialization of the application number array
+	appl_num = []
+
+	for i, line in enumerate(lines):
+		if word in line:
+			#print(lines[i+2])
+			appl_num.append(lines[i + 2])
+	return appl_num
+
+def get_inventors():
+	patentfile = open('output.txt', 'r', encoding = "utf-8", errors = "ignore")
+	file_content = str(patentfile.read())		# store all 15 patents' contents
+
+	begining_indexes = []
+	ending_indexes =[]
+	for m in re.finditer('Inventors:', file_content):	# find all begining indexes of investors' names
+		begining_indexes.append(m.end()+1)
+	for m in re.finditer('Applicant:', file_content):	# find all ending indexes of investors' names
+		ending_indexes.append(m.start()-1)
 
 
+	inventor_names = []		# store all formated names of inventors from those 15 patents
+	for i in range(len(begining_indexes)):
+		names = []
+		first = begining_indexes[i]
+		last = ending_indexes[i]
+		names = file_content[first:last]	# find the block of text containing only inventor names from each patent
+		names = re.sub('\n', ' ', names).strip()	#get rid of all the white space in the inventor blocks
+		names = names.split(';')
+		del names[2::3] 	# delete address in name list
+		names =[ ''.join(x) for x in zip(names[0::2], names[1::2]) ] 	# join first name and last name into one element
+		names = ','.join(names)		# join all inventor names for this patent and seperate them by ','
+		inventor_names.append(names)  	# store all formated names of inventors from this patent
+
+	for i in inventor_names:
+		print(i)
+		print('\n\n\n')
+
+	return inventor_names
 
 
+def get_patent_map_new():
 
-# gets the patent information then maps it to a dictionary
-# used in the main function to compare indexes to the dictionary
-def get_patent_map():
+	# so the first section of this function finds the lines
+	# where the titles, appl. numbers, and inventors are.
+	# it takes those 3 different lists and zips them together
+	titles = get_patent_title()
+	appl_num = get_app_num()
+	inventor_names = get_inventors()
+
+	# zips all three of the lists together
+	allPatentInfo = zip(titles,appl_num,inventor_names)
+
+
+	#========== Get Patent Line Number =============
+	with open('output.txt','r') as f:	# split patent file content by line break
+		lines = f.read().split("\n")
+
+	word = '* * * * *' #  word of interest to anchor the last line of each patent
+	patent_i =[]
+	# iterate over lines, and print out line numbers which contain
+	# the word of interest.
+	for i,line in enumerate(lines):
+		if word in line:
+			patent_i.append(i+1)	# obtain a list of ending line indexes for each patent
+
+	start = patent_i[:-1] 	# create a list of starting line indexes for each paten
+	start.insert(0,0)
+	end = patent_i
+	intervals = list(zip(start,end))	# create a list of index intervals for each patent
+	mapp = dict(zip(intervals,allPatentInfo))	# link each interval to associate patent title
+
+	# returns mapp dictionary
+	return mapp
+
+
+def get_patent_info():
+
+	titles = get_patent_title()
+	appl_num = get_app_num()
+	inventor_names = get_inventors()
+
+	# zips all three of the lists together
+	allPatentInfo = zip(titles,appl_num,inventor_names)
+	return allPatentInfo
+
+
+	# gets the patent information then maps it to a dictionary
+	# used in the main function to compare indexes to the dictionary
+	# def get_patent_map():
 
 	# so the first section of this function finds the lines
 	# where the titles, appl. numbers, and inventors are.
@@ -161,69 +269,8 @@ def get_patent_map():
 
 # this is the same as the last function, however it only zips the
 # three lists together then just returns that 3 dimensionial list
-def get_patent_info():
+# def get_patent_info():
 
-	# so the first section of this function finds the lines
-	# where the titles, appl. numbers, and inventors are.
-	# it takes those 3 different lists and zips them together
-
-	#========= Get Patent Titiles ==============
-	with open('output.txt','r') as f:	# split patent file content by line break
-		lines = f.read().split("\n")
-
-
-	word = 'United States Patent Application' # word of interest to anchor the line number for each patent name
-	# initialization of the title array
-	titles =[]
-	# iterate over lines, and print out line numbers which contain
-	# the word of interest.
-	for i,line in enumerate(lines):
-		if word in line:
-			#print(lines[i+17])
-			titles.append(lines[i+17]) # obtain a list of title indexes
-
-	# sets the search file for application numbers
-	word = 'Appl. No.:'
-	# initialization of the application number array
-	appl_num = []
-
-	for i, line in enumerate(lines):
-		if word in line:
-			#print(lines[i+2])
-			appl_num.append(lines[i + 2])
-
-
-	# sets the end search points for inventors
-	word = 'Applicant:'
-	# initialization of the inventor number array
-	invent_num_ending_index = []
-
-	for i, line in enumerate(lines):
-		if word in line:
-			#print(i)
-			invent_num_ending_index.append(i)
-
-
-
-	# sets the search file for inventors
-	word = 'Inventors:'
-	# initialization of the inventor number array
-	invent_num = []
-
-	index_accum = 0
-	for i, line in enumerate(lines):
-		if word in line:
-			#print(lines[i+1:invent_num_ending_index[index_accum]])
-			#print()
-			inventorlist = lines[i+1:invent_num_ending_index[index_accum]]
-			invent_num.append(inventorlist)
-			index_accum += 1
-
-	# zips all three of the lists together
-	allPatentInfo = zip(titles,appl_num,invent_num)
-
-	# returns the 3 dimensionial list
-	return allPatentInfo
 
 # searches the mapp dictionary for the 'word' and outputs
 # the patent data that it finds
@@ -232,7 +279,7 @@ def search(mapp, word):
 	#=========== Get Keywords =============
 	# this is kinda rough, may slow down the code
 	with open('output.txt','r') as f:	# split patent file content by line break
-	    lines = f.read().split("\n")
+		lines = f.read().split("\n")
 
 	key_i =[]
 		# iterate over lines, and print out line numbers which contain
@@ -243,17 +290,17 @@ def search(mapp, word):
 
 	result = []
 	for k in key_i:
-	    for m in mapp:
-	        if m[0] < k < m[1]:		# find each keyword index in each of the patent intervals
-	            result.append(mapp[m])	# obtain a list of patent titles which have keyword included in their content
-				print(result.append(mapp[m]))
-				print()
+		for m in mapp:
+			if m[0] < k < m[1]:		# find each keyword index in each of the patent intervals
+				result.append(mapp[m])	# obtain a list of patent titles which have keyword included in their content
+				#print(result.append(mapp[m]))
+				#print()
 	result = set(result)
 
 	# returns the list of patents that have the keyword in them
 	return result
 
-def get_inventors():
+def get_inventors_old():
 
 	patentfile = open('output.txt', 'r', encoding = "utf-8", errors = "ignore")
 	file_content = str(patentfile.read())		# store all 15 patents' contents
@@ -290,7 +337,7 @@ def get_inventors():
 
 	indx_result = []
 	word_result = []
-	mapp_pat = get_patent_map()
+	mapp_pat = get_patent_map_new()
 	n = 0
 
 	for n in range(len(roster)):
@@ -306,6 +353,10 @@ def get_inventors():
 	# 2 dimensionial list
 	inventor_patIndex = zip(word_result, indx_result)
 
+	for i in inventor_names:
+		print(i)
+		print('\n\n\n')
+
 	# returns the 2 dimensionial list
 	return inventor_patIndex
 
@@ -313,14 +364,20 @@ def get_inventors():
 # and make them URL safe.
 def urlify(s):
 
-     # remove all non-word characters (everything except numbers and letters)
-     s = re.sub(r"[^\w\s]", '', s)
+	if s[0] == ' ':
+		s = s[1:]
 
-     # replace all runs of whitespace with a single dash
-     s = re.sub(r"\s+", '-', s)
+	# remove all non-word characters (everything except numbers and letters)
+	s = re.sub(r"[^\w\s]", '', s)
 
-	 # returns the url safe string
-     return s
+	# replace all runs of whitespace with a single dash
+	s = re.sub(r"\s+", '-', s)
+
+
+	if s[0] == '-':
+		s = s[1:]
+	# returns the url safe string
+	return s
 
 # this function creates html pages for each inventor
 # and lists their associated patent data
@@ -384,7 +441,7 @@ def main():
 	# scrape the internet for the list of links
 	get_links()
 
-
+	inventors_list = get_inventors_old()
 
 	#========== INPUT FILE =============
 	patentfile = open('output.txt', 'r', encoding = "utf-8", errors = "ignore")
@@ -425,7 +482,7 @@ def main():
 	sorted_x = sorted(counts.items(),key=lambda x: x[1], reverse=True)	# ordering the key words so the most frequent ones appear first
 
 	# get the patent dictionary map
-	mapp = get_patent_map()
+	mapp = get_patent_map_new()
 
 	# open up base.html and open index.html
 	# base.html is the base no keyword version of index.html
@@ -483,6 +540,7 @@ def main():
 								else:
 									# write the list normally
 									new.writelines(str(i))
+
 								# write an ending p tag
 								new.writelines('</p>')
 								# accummulate the titleHeading variable
@@ -498,7 +556,7 @@ def main():
 
 	# get the inventor lists and return it to
 	# the inventor_patIndex variable
-	inventor_patIndex = get_inventors()
+	inventor_patIndex = get_inventors_old()
 
 	# use the inventor_patIndex as an input for the creation
 	# of the inventor html files
@@ -507,3 +565,18 @@ def main():
 
 # calls the main function
 main()
+
+
+
+
+
+#get_links()
+#get_inventors_old()
+
+	# get the inventor lists and return it to
+	# the inventor_patIndex variable
+#inventor_patIndex = get_inventors_old()
+
+	# use the inventor_patIndex as an input for the creation
+	# of the inventor html files
+#create_inventors_html(inventor_patIndex)

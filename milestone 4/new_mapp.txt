@@ -1,30 +1,30 @@
-(0, 1490)
-GRAIN QUALITY MONITORING14/583473Wellington Carl Knox, Bruns Aaron J., Sierra Victor S., Phelan James J., Hageman John M., Dima Cristian, Boesch Hanke, Herman Herman, Pezzementi Zachary Abraham, Male Carson Robert, Campoy Joan, Vallespi-gonzalez Carlos
-(1490, 2300)
-CONTROL ARRANGEMENT AND METHOD FOR CONTROLLING A POSITION OF A TRANSFER     DEVICE OF A HARVESTING MACHINE15/065125Herman Herman, Bonefas Zachary T., Vallespi-Gonzalez Carlos, Zametzer Johannes Josef
+(17316, 18858)
+CONFORMATIONALLY-PREORGANIZED, MiniPEG-CONTAINING GAMMA-PEPTIDE NUCLEIC     ACIDS14/921755LY Danith H., RAPIREDDY Srinivas, SAHU Bichismita
 (2300, 3556)
 RELIABILITY OF PHYSICAL UNCLONABLE FUNCTION CIRCUITS14/913285Mai Kenneth Wei-An, Bhargava Mudit
-(3556, 4670)
-STEERABLE, FOLLOW THE LEADER DEVICE14/642023Choset Howard M., Wolf Alon, Zenati Marco A.
-(4670, 5753)
-ADDITIVE MANUFACTURING OF EMBEDDED MATERIALS14/908637Feinberg Adam, Hinton Thomas
-(5753, 6565)
-EXTENDABLE ARTICULATED PROBE DEVICE14/579224Zubiate Brett, Choset Howard
-(6565, 7281)
-Emotion Recognition System and Method for Modulating the Behavior of     Intelligent Systems14/960335Smailagic Asim, Siewiorek Daniel
 (7281, 8614)
 METHODS, APPARATUSES, AND SYSTEMS FOR CELL AND TISSUE CULTURE14/908414Zeng Yukai, Leduc Philip R., Chiam Keng-Hwee
-(8614, 10574)
-MICRONEEDLE ARRAYS FOR CANCER THERAPY APPLICATIONS14/934927Falo, JR. Louis D., Erdos Geza, Ozdoganlar O. Burak
-(10574, 11651)
-FABRICATION, METHODS, APPARATUSES, AND SYSTEMS FOR ULTRA-COMPLIANT PROBES     FOR NEURAL AND OTHER TISSUES14/962016Fedder Gary K., Ozdoganlar Burak, Gilgunn Peter J.
-(11651, 12543)
-BITCELL WTH MAGNETIC SWITCHING ELEMENTS14/898580Pileggi Lawrence, Bromberg David M., Sumbul Huseyin E.
-(12543, 13184)
-Physically Unclonable Functions Using Neuromorphic Networks14/931592Pileggi Lawrence Thomas, Sharma Abhishek Anil, Jackson Thomas Christopher, Weldon Jeffrey Arthur
+(6565, 7281)
+Emotion Recognition System and Method for Modulating the Behavior of     Intelligent Systems14/960335Smailagic Asim, Siewiorek Daniel
+(0, 1490)
+GRAIN QUALITY MONITORING14/583473Wellington Carl Knox, Bruns Aaron J., Sierra Victor S., Phelan James J., Hageman John M., Dima Cristian, Boesch Hanke, Herman Herman, Pezzementi Zachary Abraham, Male Carson Robert, Campoy Joan, Vallespi-gonzalez Carlos
 (13184, 15847)
 OBJECT RECOGNIZER AND DETECTOR FOR TWO-DIMENSIONAL IMAGES USING BAYESIAN     NETWORK BASED CLASSIFIER14/937851SCHNEIDERMAN Henry
 (15847, 17316)
 Methods, Devices and Systems for Algae Lysis and Content Extraction14/764906Higgs, III C. Fred, LeDuc Philip R., Warren Kristin M., Mpagazehe Jeremiah N.
-(17316, 18858)
-CONFORMATIONALLY-PREORGANIZED, MiniPEG-CONTAINING GAMMA-PEPTIDE NUCLEIC     ACIDS14/921755LY Danith H., RAPIREDDY Srinivas, SAHU Bichismita
+(11651, 12543)
+BITCELL WTH MAGNETIC SWITCHING ELEMENTS14/898580Pileggi Lawrence, Bromberg David M., Sumbul Huseyin E.
+(1490, 2300)
+CONTROL ARRANGEMENT AND METHOD FOR CONTROLLING A POSITION OF A TRANSFER     DEVICE OF A HARVESTING MACHINE15/065125Herman Herman, Bonefas Zachary T., Vallespi-Gonzalez Carlos, Zametzer Johannes Josef
+(5753, 6565)
+EXTENDABLE ARTICULATED PROBE DEVICE14/579224Zubiate Brett, Choset Howard
+(10574, 11651)
+FABRICATION, METHODS, APPARATUSES, AND SYSTEMS FOR ULTRA-COMPLIANT PROBES     FOR NEURAL AND OTHER TISSUES14/962016Fedder Gary K., Ozdoganlar Burak, Gilgunn Peter J.
+(4670, 5753)
+ADDITIVE MANUFACTURING OF EMBEDDED MATERIALS14/908637Feinberg Adam, Hinton Thomas
+(12543, 13184)
+Physically Unclonable Functions Using Neuromorphic Networks14/931592Pileggi Lawrence Thomas, Sharma Abhishek Anil, Jackson Thomas Christopher, Weldon Jeffrey Arthur
+(3556, 4670)
+STEERABLE, FOLLOW THE LEADER DEVICE14/642023Choset Howard M., Wolf Alon, Zenati Marco A.
+(8614, 10574)
+MICRONEEDLE ARRAYS FOR CANCER THERAPY APPLICATIONS14/934927Falo, JR. Louis D., Erdos Geza, Ozdoganlar O. Burak

@@ -4,9 +4,9 @@
 # Names: Steven Krenn, Wendy Wei
 
 
-# The purpose of this tool is to help clients to obtain patent information based on 
-# keywords and inventor names. For each keyword/inventor will link to an html page 
-# should list ALL of the patent application name(s), application number(s), and inventor(s) 
+# The purpose of this tool is to help clients to obtain patent information based on
+# keywords and inventor names. For each keyword/inventor will link to an html page
+# should list ALL of the patent application name(s), application number(s), and inventor(s)
 # that are linked to that keyword/inventor.
 
 # imports re and csv
@@ -186,6 +186,11 @@ def get_inventors():
 	# zips up the word list and the index that the word occured in to a
 	# 2 dimensionial list
 	inventor_patIndex = zip(word_result, indx_result)
+
+
+	for i in inventor_names:
+		print(i)
+		print('\n\n\n')
 
 	# returns the 2 dimensionial list
 	return inventor_patIndex
@@ -382,4 +387,13 @@ def main():
 
 
 # calls the main function
-main()
+#main()
+
+
+	# get the inventor lists and return it to
+	# the inventor_patIndex variable
+inventor_patIndex = get_inventors()
+
+	# use the inventor_patIndex as an input for the creation
+	# of the inventor html files
+create_inventors_html(inventor_patIndex)
